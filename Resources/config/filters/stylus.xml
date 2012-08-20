@@ -6,16 +6,20 @@
 
     <parameters>
         <parameter key="assetic.filter.stylus.class">Assetic\Filter\StylusFilter</parameter>
+        <parameter key="assetic.filter.stylus.bin">/usr/bin/stylus</parameter>
         <parameter key="assetic.filter.stylus.node">%assetic.node.bin%</parameter>
         <parameter key="assetic.filter.stylus.node_paths">%assetic.node.paths%</parameter>
+        <parameter key="assetic.filter.stylus.use_nib">null</parameter>
         <parameter key="assetic.filter.stylus.compress">null</parameter>
     </parameters>
 
     <services>
         <service id="assetic.filter.stylus" class="%assetic.filter.stylus.class%">
             <tag name="assetic.filter" alias="stylus" />
+            <argument>%assetic.filter.stylus.bin%</argument>
             <argument>%assetic.filter.stylus.node%</argument>
             <argument>%assetic.filter.stylus.node_paths%</argument>
+            <call method="setUseNib"><argument>%assetic.filter.stylus.usenib%</argument></call>
             <call method="setCompress"><argument>%assetic.filter.stylus.compress%</argument></call>
         </service>
     </services>
