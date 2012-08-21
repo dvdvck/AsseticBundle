@@ -11,6 +11,7 @@
         <parameter key="assetic.filter.stylus.node_paths">%assetic.node.paths%</parameter>
         <parameter key="assetic.filter.stylus.use_nib">null</parameter>
         <parameter key="assetic.filter.stylus.compress">null</parameter>
+        <parameter key="assetic.filter.stylus.markContext">null</parameter>
     </parameters>
 
     <services>
@@ -21,6 +22,7 @@
             <argument>%assetic.filter.stylus.node_paths%</argument>
             <call method="setUseNib"><argument>%assetic.filter.stylus.usenib%</argument></call>
             <call method="setCompress"><argument>%assetic.filter.stylus.compress%</argument></call>
+            <call method="setMarkContext"><argument>%assetic.filter.stylus.markContext%</argument></call>
         </service>
     </services>
 </container>
